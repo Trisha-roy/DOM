@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Bubble</title>
+</head>
+<body id="body-container"> 
+    <h1>Event Bubble</h1>
+    <section id="section-conatiner">
+        <ul id="ul-container">
+            <li>HTML</li>
+            <li id="item-2">CSS</li>
+            <li>TAILWIND</li>
+            <li>JAVASCRIPT</li>
+        </ul>
+    </section>
+
+<script>
+    document.getElementById('body-container').addEventListener('click',function(){
+        console.log("body of html clicked")
+    })
+    document.getElementById('section-container').addEventListener('click',function(){
+        console.log("section of html clicked")
+    }) 
+    document.getElementById('ul-container').addEventListener('click',function(){
+        console.log("ul of html clicked")
+    })
+    document.getElementById('item-2').addEventListener('click',function(event){
+        console.log("Item-2 clicked");
+        event.stopPropagation()
+    })
+</script>    
+</body>
+</html>
